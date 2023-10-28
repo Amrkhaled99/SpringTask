@@ -23,7 +23,7 @@ public class PermissionController {
         return new ResponseEntity<>(permissions, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping
     public ResponseEntity<Permissions> getPermissionById(@PathVariable Long id) {
         Optional<Permissions> permission = permissionsService.getPermissionById(id);
         return permission.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
