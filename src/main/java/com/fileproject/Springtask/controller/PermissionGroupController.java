@@ -24,7 +24,7 @@ public class PermissionGroupController {
         return new ResponseEntity<>(permissionGroups, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping
     public ResponseEntity<PermissionGroups> getPermissionGroupById(@PathVariable Long id) {
         Optional<PermissionGroups> permissionGroup = permissionGroupService.getPermissionGroupById(id);
         return permissionGroup.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
